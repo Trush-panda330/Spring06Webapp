@@ -29,7 +29,7 @@ th, td {
 		<tr bgcolor="#cccccc">
 			<th>ID</th>
 			<th>名前</th>
-			<th>姓</th>
+			<th>性別</th>
 			<th>年</th>
 			<th>住所</th>
 			<th>変更</th>
