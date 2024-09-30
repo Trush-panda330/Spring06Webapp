@@ -14,7 +14,7 @@ import uetak.entity.Shain;
  * */
 @Repository
 public class ShainRepositoryImpl implements ShainRepository {
-	
+
 	@Autowired
 	private NamedParameterJdbcTemplate jdbcTemplate;
 
@@ -23,12 +23,12 @@ public class ShainRepositoryImpl implements ShainRepository {
 	public List<Shain> findAll() {
 		//SQL文の作成
 		final String sql = "select id, name, gender, nen, address from shain";
-		
+
 		//SQLの実行
 		List<Shain> shainList = jdbcTemplate.query(sql, new BeanPropertyRowMapper<Shain>(Shain.class));
-		
+
 		return shainList;
-				
+
 	}
 
 	@Override
