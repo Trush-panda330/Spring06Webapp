@@ -13,6 +13,9 @@ public interface ShainService {
 	Shain makeShain(Shain request);
 
 	//社員挿入
+	void insertShain(Shain shain);
+	
+	//社員データ一見の取得
 	Shain findByShainId(int shainId);
 
 	//社員更新
