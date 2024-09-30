@@ -20,10 +20,24 @@ public class ShainServiceImpl implements ShainService {
 		return shainRepository.findAll();
 	}
 
+	//リクエストパラメーターから社員を作成し戻す
 	@Override
 	public Shain makeShain(Shain request) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		//社員オブジェクトの作成
+		Shain shain = new Shain();
+		//社員オブジェクトに値を代入
+		shain.setId(request.getId());
+		shain.setName(request.getName());
+		shain.setGender(request.getGender());
+		shain.setNen(request.getNen());
+		shain.setAddress(request.getAddress());
+		return shain;
+	}
+	
+	@Override
+	public void insertShain(Shain shain) {
+		shainRepository.insertShain(shain);
+		
 	}
 
 	@Override
