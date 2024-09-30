@@ -55,7 +55,7 @@
 				<!-- 社員の名前を表示 -->
 			</tr>
 			<tr>
-				<td><label for="sei">姓:</label></td>
+				<td><label for="sei">性別:</label></td>
 				<td><%=shain.getGender()%></td>
 				<!-- 社員の性別を表示 -->
 			</tr>
