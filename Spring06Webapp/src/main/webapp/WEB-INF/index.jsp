@@ -48,8 +48,8 @@ th, td {
 			<td><%=shain.getGender()%></td>
 			<td><%=shain.getNen()%></td>
 			<td><%=shain.getAddress()%></td>
-			<td>変更</td>
-			<td>削除</td>
+			<td><a href="update?id=<%=shain.getId()%>">変更</a></td>
+			<td><a href="delete?id=<%=shain.getId()%>">削除</a></td>
 		</tr>
 		<%
 		}
