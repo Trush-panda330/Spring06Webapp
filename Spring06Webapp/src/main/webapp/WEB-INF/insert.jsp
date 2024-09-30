@@ -40,8 +40,8 @@
 					required></td>
 			</tr>
 			<tr>
-				<td><label for="sei">姓:</label></td>
-				<td><select id="sei" name="sei" class="form-input" required>
+				<td><label for="gender">性別:</label></td>
+				<td><select id="gender" name="gender" class="form-input" required>
 						<option value="">選択してください</option>
 						<option value="男">男</option>
 						<option value="女">女</option>
