@@ -52,7 +52,7 @@ public class ShainServiceImpl implements ShainService {
 
 	@Override
 	public void deleteShain(int shainId) {
-		// TODO 自動生成されたメソッド・スタブ
+		shainRepository.deleteShain(shainId);
 
 	}
 }
