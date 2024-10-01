@@ -90,11 +90,12 @@ public class ShainRepositoryImpl implements ShainRepository {
 	}
 
 	@Override
-	public void deleteShain(Shain shain) {
+	public void deleteShain(int shainId) {
 		//SQL文の作成
 		final String sql = "delete from shain where id =:id";
 		//パラメータの作成
 		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("id", shainId);
 		//実行
 		jdbcTemplate.update(sql, param);
 
