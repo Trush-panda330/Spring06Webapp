@@ -42,14 +42,12 @@ public class ShainServiceImpl implements ShainService {
 
 	@Override
 	public Shain findByShainId(int shainId) {
-		// TODO 自動生成されたメソッド・スタブ
-		return null;
+		return shainRepository.findByShainId(shainId);
 	}
 
 	@Override
 	public void updateShain(Shain shain) {
-		// TODO 自動生成されたメソッド・スタブ
-
+		shainRepository.updateShain(shain);
 	}
 
 	@Override
@@ -57,5 +55,4 @@ public class ShainServiceImpl implements ShainService {
 		// TODO 自動生成されたメソッド・スタブ
 
 	}
-
 }
