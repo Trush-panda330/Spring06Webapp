@@ -19,6 +19,6 @@ public interface ShainRepository {
 	void updateShain(Shain shain);
 
 	//社員削除
-	void deleteShain(Shain shain);
+	void deleteShain(int shainId);
 
 }
