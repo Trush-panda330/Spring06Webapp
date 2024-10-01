@@ -79,4 +79,27 @@ public class ShainController {
 		return "redirect:/index";
 	}
 
+	@GetMapping("/delete")
+	public String delete(
+			@RequestParam("id") int id,
+			Model model) {
+		//対象データを取得
+		Shain shain = shainService.findByShainId(id);
+
+		//jspに渡す
+		model.addAttribute("shain", shain);
+		return "delete";
+	}
+
+	@PostMapping("/delete")
+	public String delete(
+			@RequestParam("id") int id) {
+
+		//dbから削除
+		shainService.deleteShain(id);
+
+		//リダイレクト
+		return "redirect:/index";
+	}
+
 }
