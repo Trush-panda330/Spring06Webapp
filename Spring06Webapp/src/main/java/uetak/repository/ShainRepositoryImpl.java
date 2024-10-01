@@ -41,10 +41,10 @@ public class ShainRepositoryImpl implements ShainRepository {
 		//パラメーターの作成
 		MapSqlParameterSource param = new MapSqlParameterSource();
 		param.addValue("id", shainId);
-		
+
 		//SQLの実行
 		List<Shain> shainList = jdbcTemplate.query(sql, param, new BeanPropertyRowMapper<Shain>(Shain.class));
-		
+
 		//リストを判定して戻す
 		return shainList.isEmpty() ? null : shainList.get(0);
 	}
@@ -70,9 +70,23 @@ public class ShainRepositoryImpl implements ShainRepository {
 
 	@Override
 	public void updateShain(Shain shain) {
-		//SQL文の作成
-		
+		// SQL文の作成
+		// shainテーブルの社員情報を、idに基づいて更新するSQL文
+		final String sql = "update shain set name = :name, gender = :gender, nen = :nen, address = :address "
+				+ "where id = :id";
 
+		// パラメータの作成
+		// SQL文のプレースホルダーに値をバインドするためのパラメータ設定
+		MapSqlParameterSource param = new MapSqlParameterSource();
+		param.addValue("id", shain.getId());
+		param.addValue("name", shain.getName());
+		param.addValue("gender", shain.getGender());
+		param.addValue("nen", shain.getNen());
+		param.addValue("address", shain.getAddress());
+
+		// SQLの実行
+		// jdbcTemplateを使ってSQLクエリを実行し、shainテーブルのレコードを更新する
+		jdbcTemplate.update(sql, param);
 	}
 
 	@Override
